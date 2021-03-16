@@ -19,7 +19,7 @@ Coding requirements:
 2.Data structures for storing game status:
   Arrays are used to store the skills, HPs and MPs of players and bosses
 3.Dynamic memory management:
-  We will use varibles to store the game status 
+  We will use variables to store the game status 
 4.File input/output (e.g., for loading/saving game status):
   Support feature 5
 5.Program codes in multiple files:
