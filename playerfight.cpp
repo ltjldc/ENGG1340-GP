@@ -27,9 +27,9 @@ void Show_Status()
 //output: when a is between 1 and 4, print the specific detail of random event met to the screen. When a = 1, return 0 (A judge for whether to skip the round for players), else return 1.
 int random_events()
 {
-	int a;
-	a = Rand(1, 8);
-	if (a == 1)
+	int randomValue;
+	randomValue = Rand(1, 8);
+	if (randomValue == 1)
 	{
 		cout << "  ---------------------------------------------------------------" << endl;
 		cout << "  |                 WARNING:  Random event!!!                   |" << endl;
@@ -37,7 +37,7 @@ int random_events()
 		cout << "  ---------------------------------------------------------------" << endl;
 		return 1;
 	}
-	else if (a == 2)
+	else if (randomValue == 2)
 	{
 		cout << "  ---------------------------------------------------------------" << endl;
 		cout << "  |                 WARNING:  Random event!!!                   |" << endl;
@@ -49,7 +49,7 @@ int random_events()
 		}
 		return 0;
 	}
-	else if (a == 3)
+	else if (randomValue == 3)
 	{
 		cout << "  ---------------------------------------------------------------" << endl;
 		cout << "  |                 WARNING:  Random event!!!                   |" << endl;
@@ -61,7 +61,7 @@ int random_events()
 		}
 		return 0;
 	}
-	else if (a == 4)
+	else if (randomValue == 4)
 	{
 		cout << "  ---------------------------------------------------------------" << endl;
 		cout << "  |                 WARNING:  Random event!!!                   |" << endl;
@@ -84,11 +84,11 @@ int random_events()
 //output: return the integer a inputed.
 int Skill_Choose(int x)
 {
-	int a;
+	int choice;
 	p[x].show_skill();
 	cout << word[24][lang]; //Please input the skill you choose:
-	cin >> a;
-	return a;
+	cin >> choice;
+	return choice;
 }
 
 //fight round for fighter, according to different skill chosen by player, different changes are generated to the status of players and boss
@@ -97,8 +97,8 @@ int Skill_Choose(int x)
 void Fighter_turn(int x)
 {
 	int damage;
-	int a = Skill_Choose(x);
-	switch (a)
+	int choice = Skill_Choose(x);
+	switch (choice)
 	{
 	case 1:
 		cout << word[2][lang] << p[x].name << word[25][lang] << word[10][lang] << endl; //cout << "Hero" << p[x].name << "used skill --- " << p[x].name << "mad dance" << endl;
@@ -158,8 +158,8 @@ void Fighter_turn(int x)
 void Magic_turn(int x)
 {
 	int damage, mp_recover;
-	int a = Skill_Choose(x);
-	switch (a)
+	int choice = Skill_Choose(x);
+	switch (choice)
 	{
 	case 1:                 // baleful strike, using 50 mp
 		if (p[x].mp >= 50)
@@ -214,9 +214,9 @@ void Magic_turn(int x)
 //output: skill used, mp used, demage made to boss, hp recovered are printed on the screen, if mp is not enough, "mp is not enough. This round is skipped" is printed, if no that skill,"This skill does not exist. This round is skipped." is printed.
 void Support_turn(int x)
 {
-	int a = Skill_Choose(x);
-	int hprecover, damage;
-	switch (a)
+	int choice = Skill_Choose(x);
+	int hp_recover, damage;
+	switch (choice)
 	{
 	case 1:
 		if (p[x].mp >= 25)
@@ -236,12 +236,12 @@ void Support_turn(int x)
 		{
 			p[x].mp -= 50;
 			cout << word[2][lang] << p[x].name << word[25][lang] << "double flowers' word, using 50 mp" << endl;
-			hprecover = Rand(200, 500);
+			hp_recover = Rand(200, 500);
 			for (int i = 1; i <= NUM; i++)
 			{
-				p[i].hp += hprecover;
+				p[i].hp += hp_recover;
 			}
-			cout << "recover " << hprecover << "hp for all players";
+			cout << "recover " << hp_recover << "hp for all players";
 		}
 		else
 		{
