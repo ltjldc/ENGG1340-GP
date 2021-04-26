@@ -39,7 +39,7 @@ bool MAINTAIN(int &save_and_leave)   // returns whether it is a win or loss. 		s
 		}
 
 		int randomEvent = random_events();
-		if (randomEvent == 0) 
+		if (randomEvent == 0) // the round is not skipped due to random event
 		{
 			for (int i = 1; i <= NUM; i++)
 				if (p[i].hp > 0)
@@ -59,9 +59,11 @@ bool MAINTAIN(int &save_and_leave)   // returns whether it is a win or loss. 		s
 						break;
 					}
 					cout << endl;
+					if (boss->hp <= 0) 
+					{  //boss is dead and players win
+						return 1;
+					}
 				}
-			if (boss->hp <= 0)  //boss is dead and players win
-				return 1;
 			Show_Status();
 			cout << "Boss " << boss->name << word[41][lang] << endl;  //boss'round
 			Boss_turn();
@@ -77,7 +79,7 @@ bool MAINTAIN(int &save_and_leave)   // returns whether it is a win or loss. 		s
 			cin.get();
 			cin.get();	//wait for the user to input Enter
 		}
-		else //player's round is skipped
+		else //player's round is skipped due to random event
 		{
 			Show_Status();
 			cout << "Boss " << boss->name << word[41][lang] << endl;
