@@ -62,7 +62,7 @@ void new_player(int num) //generate a new player
 { // num is the hero index
 	string NAME;
 	int TYPE;
-	cout << word[5][lang] << num << word[6][lang] << endl; //please input the name
+	cout << word[5][lang] << num << word[6][lang] << " (The length of the name cannot exceed 10)" << endl; //please input the name
 	cin >> NAME;
 	cout << word[5][lang] << num << word[7][lang] << endl; //please input the type
 	cin >> TYPE;
