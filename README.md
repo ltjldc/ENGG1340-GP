@@ -24,7 +24,7 @@ Hence, teamwork is important in OC dmx, different roles could make the most of t
 
 
 Procedures:
-The user can first choose a language (English is preferable because the Chinese version still contains some English). Then the user can choose whether to load the saved game or start a new game. If a saved game is loaded, animation will appear to generate the battle board. If a new game is started, the user needs to input the number of players, and their respective names and roles. 
+The user can first choose a language (English is preferable because the Chinese version still contains some English). Then the user can choose whether to load the saved game or start a new game. If a saved game is loaded, animation will appear to generate the battle board. If a new game is started, the user needs to input the number of players, and their respective names and roles. (WARNING: the name cannot exceed 10 characters)
 
 After entering the battle board, there will be a 50% probability to have a random event. The damage or healing value of some skills is generated randomly within a range, and there are two buff and two debuff that player have chance to get each round, the following is buff & debuff included.
 Buff including: 	1. ALL players recover 500hp. 	2. ALL players' mp become double
