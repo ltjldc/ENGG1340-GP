@@ -3,12 +3,12 @@ Liu Tianjia (3035729370)
 He Zixuan (3035827861)
 
 Description and rule of game:
-OC dmx is a turn-based, text-based game where multiple players can choose their roles (fighter/mage/support) and use various skills to fight against boss --- ENGG1340Fail.
+ENGG1340 Adventure is a turn-based, text-based game where multiple players can choose their roles (fighter/mage/support) and use various skills to fight against boss --- ENGG1340Fail.
 
 Different roles have different skills. The following is a brief introduction of each role:
 1.	fighter
 feature: Making a lot of damage
-defect: No skill to recover mp or hp
+defect: No skill to recover mp (magic point) or hp (health point)
 
 2.	mage
 feature: Recover mp
@@ -19,15 +19,19 @@ feature: Recover hp and provide shield for players
 defect: No skill to recover mp and damage to boss is very low
 *shield could prevent players from boss’s next hit
 
+When a player does not have enough mp to use some skill, using that skill will automatically skip that round.
+
 Hence, teamwork is needed in OC dmx, different roles could make the most of themselves only with their team members.
 
-The game is full of randomness. The damage value of some skills is generated randomly within a range, and there are two buff and two debuff that player have chance to get each round, the following is buff & debuff invlvoed.
-Buff involved: 
-1. ALL players recover 500hp.   
-2. ALL players' mp become double
-Debuff involved:
-				3. ALL players lose 50% mp
-				4. ALL players fall asleep, players' rounds end.
+The game is full of randomness. The damage or healing value of some skills is generated randomly within a range, and there are two buff and two debuff that player have chance to get each round, the following is buff & debuff included.
+Buff included: 
+	1. ALL players recover 500hp.   
+	2. ALL players' mp become double
+Debuff included:
+	3. ALL players lose 50% mp
+	4. ALL players fall asleep, players' rounds end.
+
+The user can first choose a language (English is preferable because the Chinese version still contains some English).
 
 The target of players is defeating boss, 1340Fail. When the HP of the boss becomes 0, players win; when the HPs of all the players become 0, players lose.
 
