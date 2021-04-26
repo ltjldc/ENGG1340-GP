@@ -38,14 +38,14 @@ The final target of players is defeating boss, 1340Fail. When the HP of the boss
 (When users input, they just need to type an integer according to the instructions on the screen and press Enter. It is so easy!)
 
 Features Included:
-1.Single or multiple players are allowed to play.
-2.Each players ca input their own name.
-3.Players can choose different roles with multiply skills each.
-4.The damage values of some skills for each round are randomly set within a range. This is to make the gameplay more uncertain and challenging.
-5.At the beginning of each round, there are chance for players to get random event, which will bring them buff or debuff.
-6.Dynamic class and dynamic class array are used to store status of players and boss.
-7.Players could choose to save the current game status and exit after every 5 rounds. The status information will be stored in their computer as a file ("data.txt"). For the next play, they could choose to load the last saved game from that file. When playing the game, at the beginning of each round, there will be a notice to inform you how much rounds are there until the next chance to save.
-8.Simple animations through pausing the program for certain seconds to make the game more interesting.
+1. Single or multiple players are allowed to play.
+2. Each players ca input their own name.
+3. Players can choose different roles with multiply skills each.
+4. The damage values of some skills for each round are randomly set within a range. This is to make the gameplay more uncertain and challenging.
+5. At the beginning of each round, there are chance for players to get random event, which will bring them buff or debuff.
+6. Dynamic class and dynamic class array are used to store status of players and boss.
+7. Players could choose to save the current game status and exit after every 5 rounds. The status information will be stored in their computer as a file ("data.txt"). For the next play, they could choose to load the last saved game from that file. When playing the game, at the beginning of each round, there will be a notice to inform you how much rounds are there until the next chance to save.
+8. Simple animations through pausing the program for certain seconds to make the game more interesting.
 
 
 Code Requirement:
