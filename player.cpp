@@ -4,6 +4,9 @@
 #include <iomanip>
 using namespace std;
 
+//initial assignment for differnt types of players.
+//input: name of player (string), type of player (int), index of player, ex: 2 is the seond player (int)
+//no output
 Player::Player(string Name, int Type, int Ind)
 {
 	name = Name;
@@ -29,6 +32,9 @@ Player::Player(string Name, int Type, int Ind)
 	}
 }
 
+//show the status of players if hp > 0;
+// no input
+// output: the status showed, including name, hp, mp
 void Player::show_status()
 {
 	if (hp <= 0)
@@ -50,6 +56,9 @@ void Player::show_status()
 	cout << endl;
 }
 
+//show the skills of players for different types
+//no input
+//output: the order number of skills, the name of skills and details of skill(mp used and effect of skills) will be showed on screen.
 void Player::show_skill()
 {
 	switch (type)
@@ -69,13 +78,13 @@ void Player::show_skill()
 		cout << endl;
 		break;
 	case 2:
-		cout << word[9][lang] << "1" << word[14][lang] << endl;
+		cout << word[9][lang] << "1" << word[14][lang] << endl;// baleful strike, using 50 mp
 		cout << word[15][lang] << endl;
-		cout << word[9][lang] << "2" << word[16][lang] << endl;
+		cout << word[9][lang] << "2" << word[16][lang] << endl;// normal hit
 		cout << word[17][lang] << endl;
-		cout << word[9][lang] << "3" << word[18][lang] << endl;
+		cout << word[9][lang] << "3" << word[18][lang] << endl;// meditation
 		cout << word[19][lang] << endl;
-		cout << word[9][lang] << "4" << word[20][lang] << endl;
+		cout << word[9][lang] << "4" << word[20][lang] << endl;// illumination , using 50 mp
 		cout << word[21][lang] << endl;
 		cout << endl;
 		break;
