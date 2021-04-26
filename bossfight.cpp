@@ -12,12 +12,12 @@ using namespace std;
 int boss_choose() // return 1-4 with uneuqal probability
 {
 	static int range[11] = {0, 25, 25, 20, 15, 15};
-	int rd = Rand(1, 100);
+	int randomValue = Rand(1, 100);
 	for (int i = 1; i <= 10; i++)
 	{
-		if (rd <= range[i])
+		if (randomValue <= range[i])
 			return i;
-		rd -= range[i];
+		randomValue -= range[i];
 	}
 	return -1;
 }
@@ -39,14 +39,14 @@ void Boss_turn()
 		}
 	}
 
-	int co = boss_choose();
-	if (co == -1)	// to prevent unexpected error in boss_choose() causing the game to stop. Normally co wont be -1
+	int choice = boss_choose();
+	if (choice == -1)	// to prevent unexpected error in boss_choose() causing the game to stop. Normally co wont be -1
 	{
 		cout << word[32][lang] << endl; //"Something wrong with boss. The round is skipped."
 		return;
 	}
 	int damage, recover, tar;
-	switch (co)
+	switch (choice)
 	{
 	case 1:	//group damage
 		damage = Rand(250, 750);
