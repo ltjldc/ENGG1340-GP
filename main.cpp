@@ -16,7 +16,7 @@ using namespace std;
 bool MAINTAIN(int &save_and_leave)   // returns whether it is a win or loss. 		save_and_leave refers to whether the player chooses to save and leave the game
 {
 	int count = 0; // count the number of rounds
-	int s; // save when s = 1
+	int saveIndicator; // save when saveIndicator = 1
 	system("clear");
 	while (1)
 	{
@@ -24,15 +24,15 @@ bool MAINTAIN(int &save_and_leave)   // returns whether it is a win or loss. 		s
 		if (count % 5 == 0)  // only give the option to save every 5 rounds
 		{
 			cout << word[45][lang] << endl; // ask whether need to load or not
-			cin >> s;
-			if (s == 1)
+			cin >> saveIndicator;
+			if (saveIndicator == 1)
 			{
 				save(boss, p, NUM);
 				save_and_leave = 1;
 				return 1;	
 			}
 		}
-		else // when s==2 or the user mistakenly input other number
+		else 
 		{
 			cout << word[46][lang] << 5 - (count % 5) << word[47][lang] << endl;  // there are still x rounds till the next chance to save
 			cout << endl;
