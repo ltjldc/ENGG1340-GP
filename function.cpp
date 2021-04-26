@@ -7,7 +7,10 @@
 
 using namespace std;
 
-int RandMax()	// returns a large (8-digit) random int
+//returns a large (8-digit) random int
+//no input
+//output: return the ramdom integer generated
+int RandMax()	
 {
 	int tmp = 0;  //tmp is temporary integer
 	for (int i = 1; i <= 8; i++)
@@ -20,7 +23,10 @@ int Rand(int l, int r)	// return a random int between l and r
 	return l + RandMax() % (r - l + 1);
 }
 
-void animation(string sentence) // animation to generate the valley and heros
+//triangle animation with varying time delay to generate the valley and heros
+//input: The sentence you want to generate with animation
+//no output
+void animation(string sentence) 
 {
 	for (int i = 1; i <= 3; i++)
 	{
@@ -36,7 +42,10 @@ void animation(string sentence) // animation to generate the valley and heros
 	cout << endl;
 }
 
-void grow_array(Player *&array, int size)	//increase the size of the player array by the inputed number of players. 
+//increase the size of the player array by the inputed number of players. 
+//input: the player array used for storing status of players and the number of players(int)
+//no output
+void grow_array(Player *&array, int size)	
 {
 	if (array == NULL)
 		return;
@@ -51,7 +60,10 @@ void grow_array(Player *&array, int size)	//increase the size of the player arra
 	size = newSize;
 }
 
-void save(Boss *&boss, Player player[], int num)	// save the status of boss, player and number of players into data.txt
+//save the status of boss, player and number of players into data.txt
+//input: Boss, which is used to store the status of boss, an array of Player, used for store the status of players, an integer num, which is the number of players
+//output:a file "data.txt" to store the number of players and status of boss and players.
+void save(Boss *&boss, Player player[], int num)
 { // num is number of players
 	ofstream fout;
 	fout.open("data.txt");
@@ -82,12 +94,15 @@ void save(Boss *&boss, Player player[], int num)	// save the status of boss, pla
 	fout.close();
 }
 
-int get_NUM(string a)	// a is the file name and returns the number of players from the first line of the file
+//get the number of players from the file
+//input: filename(string), which is the file name 
+//output: returns the number of players from the first line of the file
+int get_NUM(string filename)	
 {
 	int num;
 	string numstring;
 	ifstream fin_num;
-	fin_num.open(a.c_str());
+	fin_num.open(filename.c_str());
 	if (fin_num.fail())
 	{
 		cout << "No saved file!" << endl;
@@ -101,7 +116,10 @@ int get_NUM(string a)	// a is the file name and returns the number of players fr
 	return num;
 }
 
-void load(string filename, Boss *boss, Player *&player)	// load and assign the values of the boss and players from the file,
+//load and assign the values of the boss and players from the file
+//input:the file name(string), the Boss and arrays of Player
+//no output
+void load(string filename, Boss *boss, Player *&player)	
 {
 	ifstream fin;
 	fin.open(filename.c_str());
