@@ -9,7 +9,7 @@ using namespace std;
 
 int RandMax()	// returns a large (8-digit) random int
 {
-	int tmp = 0;
+	int tmp = 0;  //tmp is temporary integer
 	for (int i = 1; i <= 8; i++)
 		tmp = tmp * 10 + rand() % 10;
 	return tmp;
@@ -43,7 +43,7 @@ void grow_array(Player *&array, int size)	//increase the size of the player arra
 
 	int newSize = 1 + size;
 
-	Player *tmp = new Player[newSize];
+	Player *tmp = new Player[newSize]; 
 
 	delete[] array;
 
@@ -105,8 +105,8 @@ void load(string filename, Boss *boss, Player *&player)	// load and assign the v
 {
 	ifstream fin;
 	fin.open(filename.c_str());
-	string a;
-	int b;
+	string loadString;  //loadString is used for getline(fin,loadstring), first read a string from file
+	int loadInt; //loadInt is used for stringstream to convert string to int
 
 	stringstream stream;
 
@@ -122,54 +122,54 @@ void load(string filename, Boss *boss, Player *&player)	// load and assign the v
 		exit(0);
 	}
 
-	getline(fin, a);
-	stream << a;		// to convert string into int
+	getline(fin, loadString);
+	stream << loadString;		// to convert string into int
 	stream >> NUM;
 	stream.clear();
 
-	getline(fin, a);
-	(*boss).name = a;
+	getline(fin, loadString);
+	(*boss).name = loadString;
 
-	getline(fin, a);
-	stream << a;
-	stream >> b;
-	(*boss).hp = b;
+	getline(fin, loadString);
+	stream << loadString;
+	stream >> loadInt;
+	(*boss).hp = loadInt;
 	stream.clear();
 
-	getline(fin, a);
-	stream << a;
-	stream >> b;
-	(*boss).upgrade = b;
+	getline(fin, loadString);
+	stream << loadString;
+	stream >> loadInt;
+	(*boss).upgrade = loadInt;
 	stream.clear();
 
 	for (int i = 1; i <= NUM; i++)
 	{
-		getline(fin, a);
-		player[i].name = a;
-		getline(fin, a);
-		stream << a;
-		stream >> b;
-		player[i].type = b;
+		getline(fin, loadString);
+		player[i].name = loadString;
+		getline(fin, loadString);
+		stream << loadString;
+		stream >> loadInt;
+		player[i].type = loadInt;
 		stream.clear();
-		getline(fin, a);
-		stream << a;
-		stream >> b;
-		player[i].hp = b;
+		getline(fin, loadString);
+		stream << loadString;
+		stream >> loadInt;
+		player[i].hp = loadInt;
 		stream.clear();
-		getline(fin, a);
-		stream << a;
-		stream >> b;
-		player[i].mp = b;
+		getline(fin, loadString);
+		stream << loadString;
+		stream >> loadInt;
+		player[i].mp = loadInt;
 		stream.clear();
-		getline(fin, a);
-		stream << a;
-		stream >> b;
-		player[i].ind = b;
+		getline(fin, loadString);
+		stream << loadString;
+		stream >> loadInt;
+		player[i].ind = loadInt;
 		stream.clear();
-		getline(fin, a);
-		stream << a;
-		stream >> b;
-		player[i].shield = b;
+		getline(fin, loadString);
+		stream << loadString;
+		stream >> loadInt;
+		player[i].shield = loadInt;
 		stream.clear();
 	}
 
